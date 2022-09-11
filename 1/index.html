@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>Car Driving</title>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<style>
+body{padding: 0; margin:0; background: rgb(40, 39, 39); overflow: hidden;}
+.car{
+    width: 100px;
+    position: absolute;
+    bottom:10%;
+    left:45%;
+    z-index: 999;
+}
+
+#contol{
+position: fixed;
+z-index: 5000;
+}
+
+</style>
+<script>
+    $(document).ready(function(){
+    let car=$("#car");
+
+$("#left").click(function(){
+    car.css('transform','rotate(270deg)');
+        car.animate({
+            left: "-=50",
+        },500);
+});
+
+$('#up').click(function(){
+    car.css('transform','rotate(0deg)');
+    car.animate({
+            top: "-=50"
+        }, 500);
+});
+
+$("#right").click(function(){
+    car.css('transform','rotate(90deg)');
+        car.animate({
+            left: "+=50"
+        },500);
+});
+
+$("#down").click(function(){
+    car.css('transform','rotate(180deg)');
+    $('#road').removeClass('anime');
+        car.animate({
+            top: "+=50"
+        }, 500);
+});
+
+
+});
+
+</script>
+</head>
+    <body>
+        <img id="car" class="car" src="car.svg" />
+             <div id="contol">
+                <input id="up" type="submit" value="UP">
+                <input id="down" type="submit" value="DOWN">
+                <input id="left" type="submit" value="LEFT">
+                <input id="right" type="submit" value="RIGHt"><br><br>
+            </div>
+    </body>
+</html>

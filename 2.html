@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Temperature Converter</title>
+        <style>
+             #content{width: 172px;}
+            .ina{background: rgb(255, 200, 219);}
+            .inb{background: rgb(192, 243, 255);}
+             h4{border-bottom:2px solid white ; padding: 0; margin: 2px;}
+        </style>
+        <script>
+            function ctof(){
+            var number=document.getElementById('ina').value;
+             if(number)
+             document.getElementById('inb').value=(number*(9/5)).toFixed(2);
+             else
+             document.getElementById('inb').value="";
+            }
+
+            function ftoc(){
+                var number=document.getElementById('inb').value;
+             if(number)
+             document.getElementById('ina').value=(number/(9/5)).toFixed(2);
+             else
+             document.getElementById('ina').value="";
+            }
+
+        </script>
+    </head>
+<body>
+<h1>Temperature Converter</h1>
+    <div id="content">
+
+        <div class="block ina">
+        <h4>Celsius</h4>
+        <input id="ina" onkeyup="ctof()" type="number" placeholder="Celsius">
+        </div>
+        <br>
+        <div class="inb">
+            <h4>Fahrenheit</h4>
+            <input  id="inb"  onkeyup="ftoc()" type="number" placeholder="Fahrenheit">
+        </div>   
+    </div>
+</body>
+</html>
